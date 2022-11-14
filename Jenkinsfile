@@ -16,5 +16,20 @@ pipeline {
                     }
                 }
             }
+stage('Docker login') {
+
+            steps {
+                   sh 'echo "login Docker ...."'
+                   sh "docker login -u youssefskhiri -p 203JMT1337"
+                               }  
+			}
+stage('docker registry')
+ {
+ steps{
+ script{
+ sh " ansible-playbook  -vvvv /var/lib/jenkins/workspace/livraison/ansible/docker-registry.yml -i ansible/hosts.yml "
+ }
+ }
+ }
         }
 }
