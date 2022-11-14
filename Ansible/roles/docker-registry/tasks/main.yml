@@ -1,5 +1,3 @@
----
-# tasks file for docker-registry
 - hosts: localhost
   gather_facts: false
   become: false
