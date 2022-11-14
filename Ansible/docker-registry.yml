@@ -4,15 +4,4 @@
   become: false
   roles:
     - { role: docker-registry }
-*main.yml:
 
-
-- name: Pushing
-  docker_image:
-   name: test
-   repository: youssefskhiri/angular-app
-   source: build
-   build:         
-     path: /var/lib/jenkins/workspace/CD
-   tag: latest
-   push: yes
