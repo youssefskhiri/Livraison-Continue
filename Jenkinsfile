@@ -12,6 +12,7 @@ pipeline {
  stage('Docker'){
             steps{
                 script{
+		    sh "sudo chmod 777 /var/run/docker.sock"
                     sh "ansible-playbook -vvvv Ansible/docker.yml -i Ansible/inventory/host.yml"
                     }
                 }
